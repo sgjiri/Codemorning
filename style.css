@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Chivo", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header #logo {
+  margin-left: 20px;
+}
+header #logo p {
+  color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+header nav {
+  width: 500px;
+  height: 100%;
+  margin-right: 20px;
+}
+header nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+header nav ul li {
+  list-style-type: none;
+  height: 100%;
+  width: 33.3%;
+}
+header nav ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.8em;
+}
+
+section {
+  width: 100%;
+}
+
+#hero {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+#hero #groupePhoto {
+  width: 100%;
+  height: 100%;
+  background: url(img/IMG_3203.jpg) center center/cover no-repeat;
+}
+#hero #groupePhoto #groupePhotoDegrade {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(225deg, rgba(255, 0, 0, 0.51) 0%, rgba(232, 140, 137, 0.51) 86.98%, rgba(216, 242, 237, 0.51) 100%);
+}
+
+#white {
+  height: calc(100vh - 50px);
+}
+
+#values {
+  height: 3600px;
+  background-color: #fff;
+}/*# sourceMappingURL=style.css.map */
