@@ -1,9 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo&display=swap');
+$red: #ff0000;
+$backgrounDegrade:linear-gradient(225deg, rgba(255, 0, 0, 0.51) 0%, rgba(232, 140, 137, 0.51) 86.98%, rgba(216, 242, 237, 0.51) 100%);
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Chivo', sans-serif;
+}
+
+h1,
+h2,
+p {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 3.5em;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 900px) {
+        font-size: 3em;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 2em;
+    }
+
+    @media screen and (max-width: 400px) {
+        font-size: 1.7em;
+    }
+
+    &::before {
+        content: "<";
+        font-size: 1.5em;
+        color: #fff;
+    }
+
+    &::after {
+        content: ">";
+        font-size: 1.5em;
+        color: #fff;
+    }
+}
+
+h2 {
+    font-size: 2.5em;
+
+    @media screen and (max-width: 900px) {
+        font-size: 2em;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 1.5em;
+    }
+
+    @media screen and (max-width: 400px) {
+        font-size: 1.2em;
+    }
+
+}
+
+p {
+    font-size: 1.5em;
+
+    @media screen and (max-width: 900px) {
+        font-size: 1.2em;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 1em;
+    }
 }
 
 
@@ -17,20 +84,57 @@ header {
     top: 0;
     z-index: 100;
 
-    #logo{
-       margin-left: 20px;
-       p{
-        color: #fff;
-        font-size: 2em;
-        text-transform: uppercase;
-       } 
+    &.scrolled {
+        background-color: #fff;
+    }
+
+
+    #logo {
+        margin-left: 20px;
+
+        p {
+            color: #fff;
+            font-size: 2em;
+            text-transform: uppercase;
+
+            @media screen and (max-width: 900px) {
+                font-size: 1.5em;
+
+            }
+
+            &.scrolled {
+                color: $red;
+
+                &::after {
+                    color: $red;
+                }
+
+                &::before {
+                    color: $red;
+                }
+            }
+
+            &::before {
+                content: "<";
+                font-size: 1.5em;
+                color: #fff;
+
+            }
+
+            &::after {
+                content: ">";
+                font-size: 1.5em;
+                color: #fff;
+
+            }
+        }
     }
 
     nav {
         width: 500px;
         height: 100%;
         margin-right: 20px;
-        
+
 
         ul {
             width: 100%;
@@ -43,7 +147,7 @@ header {
                 height: 100%;
                 width: 33.3%;
 
-                a{
+                a {
                     display: block;
                     height: 100%;
                     width: 100%;
@@ -53,11 +157,86 @@ header {
                     text-transform: uppercase;
                     color: #fff;
                     font-size: 1.8em;
+                    transition: all 0.3s;
+
+                    &.scrolled {
+                        color: $red;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+
+                    @media screen and (max-width: 900px) {
+                        font-size: 1.3em;
+                    }
+
+
+                    &:hover {
+                        background-color: $red;
+                    }
                 }
+            }
+
+
+        }
+
+        @media screen and (max-width: 900px) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 700px) {
+            display: none;
+        }
+
+    }
+
+
+
+    #burger {
+        position: absolute;
+        right: 30px;
+        width: 35px;
+        height: 70%;
+        cursor: pointer;
+        display: none;
+        transition: all 0.3s;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        @media screen and (max-width: 700px) {
+            display: flex;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        .ligneBurger {
+            height: 3px;
+            background-color: #fff;
+            width: 75%;
+
+            &:first-child {
+                margin-top: 3px;
+            }
+
+            &:last-child {
+                margin-bottom: 3px;
+            }
+
+            &.scrolled {
+                background-color: $red;
             }
         }
 
     }
+
+
+
+
 }
 
 section {
@@ -75,20 +254,196 @@ section {
         height: 100%;
         background: url(img/IMG_3203.jpg) center center / cover no-repeat;
 
+        @media screen and (max-width: 600px) {
+            background-image: url(img/najia.png);
+        }
+
         #groupePhotoDegrade {
             height: 100%;
             width: 100%;
             background: linear-gradient(225deg, rgba(255, 0, 0, 0.51) 0%, rgba(232, 140, 137, 0.51) 86.98%, rgba(216, 242, 237, 0.51) 100%);
+            position: relative;
+            overflow: hidden;
+
+            #textHero {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                width: 800px;
+                z-index: 200;
+
+                h1,
+                h2,
+                p {
+                    text-align: end;
+                }
+
+                @media screen and (max-width: 900px) {
+                    width: 500px;
+                }
+
+                @media screen and (max-width: 600px) {
+                    width: 75%;
+                }
+            }
+
+            .circle {
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-radius: 50%;
+                border: solid 1px $red;
+                transform: translate(50%, -50%);
+
+                &:nth-child(2) {
+                    width: 30%;
+                }
+
+                &:nth-child(3) {
+                    width: 50%;
+                }
+
+                &:last-child {
+                    width: 75%;
+                }
+
+            }
 
         }
 
     }
 
 }
-#white{
+
+#white {
     height: calc(100vh - 50px);
 }
-#values{
-    height: 3600px;
+.maxWidth {
+    margin: 100px auto 0;
+    max-width: 1500px;
+}
+
+#values {
     background-color: #fff;
+
+    
+        h2 {
+            color: $red;
+            margin-left: 50px;
+        }
+
+        .contentValue{
+            margin: 100px 50px 0 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            .oneValue{
+                width: 45%;
+                min-width: 300px;
+                display: flex;
+                align-items: center;
+
+                @media screen and (max-width: 700px) {
+                    width: 90%;
+                }
+
+                figure{
+                    width: 22%;
+                    margin-top: 50px
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                #homme{
+                    width: 30%;
+
+                    @media screen and (max-width:700px){
+                        width: 22%;
+                    }
+                }
+                .textOneValue{
+                    width: 70%;
+                    margin-right: 20px;
+                    h3{
+                        margin: 40px;
+                        color: #ff0000;
+                        font-size: 2em;
+
+                        @media screen and (max-width:500px){
+                            font-size: 1.5em;
+                        }
+
+                    }
+
+                    p{
+                        margin: 20px 0 0 40px;
+                        color: #4b4b4b;
+
+                        @media screen and (max-width: 1150px) {
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+
+#articles{
+    background: $backgrounDegrade;
+
+    .maxWidth {
+        padding-top: 100px;
+
+        .contentSectionArticles{
+            display: flex;
+
+            &:nth-child(2){
+                margin: 100px 50px 0 50px;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            h2{
+                width: 50%;
+                margin-left: 50px;
+            }
+            p{
+                width: 50%;
+                margin-right: 50px;
+            }
+
+            .oneArticle{
+                width: 30%;
+                min-width: 300px;
+
+                .resume{
+                    background-color: #fff;
+                    h3{
+                        color: #4b4b4b;
+                        font-size: 2em;
+                        margin: 20px 10px;
+                    }
+                    p{
+                        margin-right: 0;
+                        width: 100%;
+                        color: #4b4b4b; 
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+    
+
 }
