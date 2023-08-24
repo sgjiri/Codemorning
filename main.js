@@ -92,3 +92,17 @@ function previousSlide() {
 // Utilisez ces fonctions pour déplacer le slider
 // Par exemple : nextSlide() pour passer à l'élément suivant
 //              previousSlide() pour revenir à l'élément précéden
+
+
+let burger = document.getElementById('burger');
+let navMobil = document.getElementById('navBurger');
+let navDash = document.getElementById('croix');
+burger.addEventListener('click', function(){
+  navMobil.classList.add('burgerActive');
+  burger.classList.add('burgerActive');
+})
+
+navDash.addEventListener('click', function(){
+  navMobil.classList.remove('burgerActive');
+  burger.classList.remove('burgerActive');
+})

@@ -299,89 +299,83 @@ header {
 
 }
 
-#stagiaires{
-    .slider-container {
-        overflow: hidden;
-        width: 100%; /* ajustez la largeur comme vous le souhaitez */
-        margin: 0 auto;
 
-        .slider {
-            display: flex;
-            transition: transform 0.3s ease-in-out;
-            margin: 100px;
-          }
+.maxWidthArticle{
+    margin: 100px auto 0;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    h2{
+        color: $red;
+        margin-left: 50px;
+        font-size: 3em;
 
-          .slider-item {
-            flex: 0 0 20%; /* Chaque élément occupe 20% de l'espace visible */
-            text-align: center;
-            padding: 2px;
-            box-sizing: border-box;
-            height: 350px;
-            width: 300px;
-            margin: 0 20px;
-            background-color: #FB2A00;
-            cursor: pointer;
+        @media screen and (max-width: 800px) {
+            font-size: 2em;
+            margin-left: 30px;
+        }
+    }
 
-            @media screen and (max-width: 1400px) {
-                flex: 0 0 30%; 
-            }
+    .contenuArticle{
 
-            @media screen and (max-width: 1100px) {
-                flex: 0 0 40%; 
-            }
+        width: 100%;
+        display: flex;
 
-            @media screen and (max-width: 800px) {
-                flex: 0 0 50%; 
-            }
-            @media screen and (max-width: 700px) {
-                flex: 0 0 70%; 
-            }
-
-            @media screen and (max-width: 600px) {
-                flex: 0 0 80%; 
-            }
-
-            @media screen and (max-width: 500px) {
-                flex: 0 0 100%; 
-            }
-
-            @media screen and (max-width: 450px) {
-                flex: 0 0 120%; 
-            }
-
-            @media screen and (max-width: 400px) {
-                flex: 0 0 140%; 
-            }
-                img{
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+        }
+        .contentArticle{
+            padding: 5%;
+            &:first-child{
+                width: 40%;
+                height: 500px;
+    
+                @media screen and (max-width: 800px) {
+                    width: 90%;
+                }
+                
+                figure{
                     height: 100%;
                     width: 100%;
-                    object-fit: cover;
-                }
-            
-
-            &:hover {
-                transform: scale(1.15); /* Élément clicable 15% plus grand */
-              }
-        }
-        .fleche{
-            display: flex;
-            justify-content: center;
-
-            .flechClick{
-                margin: 40px 40px 100px;
-                height: 70px;
-                cursor: pointer;
-
-                img{
-                    height: 100%;
+        
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover
+                    };
                 }
             }
+            &:last-child{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+    
+                @media screen and (max-width: 800px) {
+                    width: 90%;
+                }
+    
+                article{
+    
+                    color: #4b4b4b;
+                    margin: 20px 0;
+                    font-size: 1.5em;
+                }
+    
+               
+            }
+    
+    
+    
         }
-      }      
+
+
+
+    }
+
+    
+
+    
 }
-
-
-
 
 
 footer{

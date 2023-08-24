@@ -189,6 +189,45 @@ header nav ul li a:hover {
     display: none;
   }
 }
+header #navBurger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  display: none;
+}
+header #navBurger.burgerActive {
+  display: block;
+}
+header #navBurger ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+header #navBurger ul li {
+  width: 100%;
+  height: 100px;
+}
+header #navBurger ul li a {
+  width: 100%;
+  line-height: 100px;
+  color: #ff0000;
+}
+header #navBurger ul li a:hover {
+  color: #fff;
+}
+header #navBurger #croix {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #ff0000;
+  font-size: 3em;
+  cursor: pointer;
+}
 header #burger {
   position: absolute;
   right: 30px;
@@ -209,9 +248,12 @@ header #burger {
 header #burger:hover {
   transform: scale(1.2);
 }
+header #burger.burgerActive {
+  display: none;
+}
 header #burger .ligneBurger {
   height: 3px;
-  background-color: #fff;
+  background-color: #ff0000;
   width: 75%;
 }
 header #burger .ligneBurger:first-child {
