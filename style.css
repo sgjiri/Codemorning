@@ -370,12 +370,7 @@ section {
   margin-top-height: 100%;
 }
 #values .contentValue .oneValue #homme {
-  width: 30%;
-}
-@media screen and (max-width: 700px) {
-  #values .contentValue .oneValue #homme {
-    width: 22%;
-  }
+  width: 22%;
 }
 #values .contentValue .oneValue .textOneValue {
   width: 70%;
