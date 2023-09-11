@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo&display=swap');
+
 $red: #ff0000;
 $backgrounDegrade: linear-gradient(225deg, #FB2A00 0%, #D8F2ED 100%);
 
+// reset css
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: 'Chivo', sans-serif;
 }
 
@@ -84,6 +89,7 @@ h3{
 
 
 }
+
 .logo {
     margin-left: 20px;
 
@@ -127,7 +133,6 @@ h3{
 
 
 header {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
